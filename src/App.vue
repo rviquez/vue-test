@@ -1,29 +1,41 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+  <v-app dark>
+    <v-toolbar dark app>
+      <v-toolbar-title class="headline text-uppercase">
+        <span>PetApp</span>
+        <span class="font-weight-light">Adopt A Pet</span>
+      </v-toolbar-title>
+      <v-spacer></v-spacer>
+      <v-toolbar-items>
+      <v-btn flat to="/">Home</v-btn>
+      <v-btn flat to="/cats">Cats</v-btn>
+      <v-btn flat to="/dogs">Dogs</v-btn>
+    </v-toolbar-items>
+    </v-toolbar>
+
+    <v-content>
+  <v-container grid-list-md text-xs-center>
+    <v-layout row wrap>
+      <v-flex xs12>
+        <router-view/>
+      </v-flex>
+    </v-layout>
+  </v-container>
+
+    </v-content>
+  </v-app>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
+<script>
+export default {
+  name: 'App',
+  components: {
+
+  },
+  data () {
+    return {
+      //
     }
   }
 }
-</style>
+</script>
